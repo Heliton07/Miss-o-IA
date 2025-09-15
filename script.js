@@ -1,97 +1,91 @@
-const caixaPrincipal = document.querySelector(".caixa-principal")
-const caixaPerguntas = document.querySelector(".caixa-perguntas")
-const caixaAlternativas = document.querySelector(".caixa-alternativas")
-const caixaResultado = document.querySelector(".caixa-resultado")
-const textoResultado = document.querySelector(".texto-resultado")
+const caixaPrincipal = documento.querySelector(".caixa-principal")
+const caixaPerguntas = documento.querySelector(".caixa-perguntas")
+const caixaAlternativas = documento.querySelector(".caixa-alternativas")
+const caixaResultados = documento.querySelector(".caixa-resultados")
+const textoResultado = documento.querySelector(".texto-resultados")
 
 const perguntas = [
+{
+enunciado:"pergunta 1",
+alternativas:[
     {
-        enunciado: "Pergunta 1",
-        alternativas: [
-          {
-              texto: "Alternativa 1",
-              afirmacao: "afirmacao"
-          },
-          {
-
-
-            texto: "Alternativa 2",
-            afirmacao: "afirmacao"}
-         ]
-        
- 
- 
-     },
+        texto: "alternativa 1",
+        afirmacao: "afirmacao"
+    },
      {
-          enunciado: "Pergunta 2",
-          alternativas: [
-         {
-             texto: "Alternativa 1",
-             afirmacao: "afirmacao"
-         },
-         {
- 
- 
-            texto: "Alternativa 2",
-            afirmacao: "afirmacao"}
-         ]
- 
- 
-     },
-     {
-          enunciado: "Pergunta 3",
-          alternativas: [
-         {
-             texto: "Alternativa 1",
-             afirmacao: "afirmacao"
-         },
-         {
- 
- 
-            texto: "Alternativa 2",
-            afirmacao: "afirmacao"}
-         ]
-     },
-     {
-         enunciado: "Pergunta 4",
-         alternativas: [
-         {
-             texto: "Alternativa 1",
-             afirmacao: "afirmacao"
-         },
-         {
-
-
-            texto: "Alternativa 2",
-            afirmacao: "afirmacao"}
-         ]
-     },
-     {
-         enunciado: "Pergunta 5",
-         alternativas: [
-         {
-             texto: "Alternativa 1",
-             afirmacao: "afirmacao"
-         },
-         {
- 
- 
-            texto: "Alternativa 2",
-            afirmacao: "afirmacao"}
-         ]
+        texto: "alternativa 2",
+        afirmacao: "afirmacao"
      }
- ];
- 
- 
- let atual = 0;
- let perguntaAtual;
- 
- 
- function mostraPergunta(){
-     perguntaAtual = perguntas[atual];
-     caixaPerguntas.textcontent = perguntaAtual.enunciado;
- }
- 
- 
- mostraPergunta();   
- 
+    
+    ]
+},   
+{    
+enunciado: "pergunta 2",
+alternativas: [
+    {
+        texto: "alternativa 1",
+        afirmacao: "afirmacao"
+    },
+     {
+        texto: "alternativa 2",
+        afirmacao: "afirmacao"
+     }
+    ]
+},
+{    
+    enunciado:"pergunta 3",
+    alternativas:[{
+        texto: "alternativa 1",
+        afirmacao: "afirmacao"
+    },
+     {
+        texto: "alternativa 2",
+        afirmacao: "afirmacao"
+     }]
+},
+{
+    enunciado:"pergunta 4",
+    alternativas:[{
+        texto: "alternativa 1",
+        afirmacao: "afirmacao"
+    },
+     {
+        texto: "alternativa 2",
+        afirmacao: "afirmacao"
+     }]
+},
+{    
+   enunciado:"pergunta 5",
+   alternativas:[{
+    texto: "alternativa 1",
+    afirmacao: "afirmacao"
+},
+ {
+    texto: "alternativa 2",
+    afirmacao: "afirmacao"
+ }]
+},               
+
+];
+
+let atual = 0;
+let perguntaAtual;
+
+function mostrarperguntas(){
+ perguntaAtual = pergunta[atual];  
+ caixaPerguntas. textcontent = perguntaAtual. enunciado;
+ mostrarAlternativas();
+}
+function mostrarAlternativas(){
+ for(const alternativa of perguntaAtual.alternativas){
+const botaoAlternativas = document.createElement(button)
+botaoAlternativas.textcontent = alternativa.texto;
+botaoAlternativa.addEventlistner("click", function(){
+atual++;
+mostrarpergunta();
+})
+caixaAlternativas.appendChild(botaoAlternativas);
+ }   
+}
+
+mostrarperguntas();
