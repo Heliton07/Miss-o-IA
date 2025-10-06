@@ -95,13 +95,7 @@ const perguntas = [
 
 
            texto: "Alternativa 2",
-           afirmacao: "a:root{
-            --cor-fundo:#;
-            --cor-principal:#;
-            --cor-secundaria:#;
-            --cor-destaque:#;
-            --cor-texto:#;
-            }firmacao"}
+           afirmacao: "afirmacao"}
         ]
     }
 ];
@@ -151,10 +145,4 @@ function mostraResultado() {
 }
 
 
-mostraPergunta();:root{
-    --cor-fundo:#;
-    --cor-principal:#;
-    --cor-secundaria:#;
-    --cor-destaque:#;
-    --cor-texto:#;
-    }
+mostraPergunta();
